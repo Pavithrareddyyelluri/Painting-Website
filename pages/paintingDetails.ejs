@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>image Layout Example</title>
+    <link rel="stylesheet" href="../css/styles11.css" />
+    <style>
+      .artwork-image img {
+        transition: transform 0.3s;
+       }
+       .artwork-image img:hover {
+        transform: scale(1.1);
+       }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+          <div class="logo">
+              <a href="#">Pavi Painting Website</a>
+            </div>
+  
+          <div class="search-bar">
+              <input type="text" placeholder="Search for paintings..." />
+              <button>Search</button>
+          </div>
+  
+          <div>
+              <ul>
+                  <li><a href="/home">Home</a></li>
+                  <li class="Gallery">
+                      <a href="#" >Paintings</a>
+                      <ul class="sub-menu">
+                          <li><a href="../featuredPaintings">Portraits</a></li>
+                          <li><a href="../landscapePaintings">Sceneries</a></li>
+                        <li><a  href="../undergroundPaintings">Under Ground Paintings</a></li>
+                        <li><a href="/allPaintings">All Paintings</a></li>
+                      </ul>
+                  </li>
+                  <li class="Gallery">
+                      
+                  </li>
+                  <li class="Gallery">
+                      <a href="#" >Artists</a>
+                      <ul class="sub-menu">
+                          <li><a href="/featuredArtists">Featured Artists</a></li>
+                          <li><a href="/trendingArtists">Trending Artists</a></li>
+                      </ul>
+                  </li>
+                  <li><a href="../pages/learn.html">Learning</a></li>
+                  <li><a href="../pages/allArtists.html">Contact Artists</a></li>
+                  <div></div><div></div>
+                  <li class="account">
+                      <a href="#">Account</a>
+                      <ul class="sub-menu">
+                        <li><a href="../pages/account.html">My Account</a></li>
+                        <li><a href="#">Order History</a></li>
+                        <li><a href="#">Logout</a></li>
+                      </ul>
+                    </li>
+                    <li class="wishlist">
+                      <a href="/addPainting">Add Painting</a>
+                    </li>
+                    <li class="wishlist">
+                      <a href="/addPainter">Add Painter</a>
+                    </li>
+                  </li>
+                    <li class="wishlist">
+                      <a href="#">Wishlist</a>
+                    </li>
+                    <li class="cart">
+                      <a href="#"><i class="fas fa-shopping-cart icon" ></i></a>
+                    </li>
+              </ul>
+          </div>
+          
+        </nav>
+      </header>
+
+      <main>
+
+        <section>
+          <h1 class="artwork-title"><%= image.title %></h1>
+          <div class="container">
+            <img src="data:<%=image.contentType%>;base64,<%=image.imageBase64%>" alt="<%= image.title %>" class="artwork-image">
+            <div class="artwork-info"> 
+              <p class="artwork-painter"><label id=id1><b>Artist: </label><%= image.painterName %></p></b>
+              <p class="artwork-tags"><label id=id1><b>Tag: </label><%= image.tag %></p></b>
+              <p class="artwork-type"><label id=id1><b>Art Type: </label><%= image.artType %></p></b>
+              <% if (image.completedyear) { %>
+                <p class="artwork-type"><label id=id1><b>Completed Year: </label><%= image.completedyear %></p></b></big>
+              <% } %>
+              <% if (image.Dimensions) { %>
+                <p class="artwork-type"><label id=id1><b>Dimensions: </label><%= image.Dimensions %></p></b>
+              <% } %>
+              <% if (image.location) { %>
+                <p class="artwork-type"><label id=id1><b>Location: </label><%= image.location %></p></b>
+              <% } %>
+              <div style="border: 2px solid grey; padding: 10px;width:500px">
+                <h3 class=""><label id=id1><big><b>Description : </label></b></big></h3>
+                <p class="artwork-description" style="font-size: medium"><%= image.description %></p>
+              </div>
+              <button class="contact-button">Contact Owner</button>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact">
+            <h2>Get in Touch</h2>
+            <p>
+              Have questions or want to learn more about our paintings.
+            </p>
+            <ul>
+              <li><a href="mailto:cs23b1080@iiitr.ac.in">Email us</a></li>
+              <li><a href="tel:123-456-7890">Call us</a></li>
+              <li><a href="#">Follow us on social media</a></li>
+            </ul>
+          </section>
+
+      </main>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painter Account Page</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    
+</head>
+<body>
+    <header>
+        <nav>
+          <div class="logo">
+              <a href="#">Pavi Painting Website</a>
+            </div>
+  
+          <div class="search-bar">
+              <input type="text" placeholder="Search for paintings..." />
+              <button>Search</button>  
+          </div>
+  
+          <div>
+              <ul>
+                  <li><a href="/home">Home</a></li>
+                  <li class="Gallery">
+                      <a href="#" >Paintings</a>
+                      <ul class="sub-menu">
+                          <li><a href="../featuredPaintings">Portraits</a></li>
+                          <li><a href="../landscapePaintings">Sceneries</a></li>
+                        <li><a  href="../undergroundPaintings">Under Ground Paintings</a></li>
+                        <li><a href="/allPaintings">All Paintings</a></li>
+                      </ul>
+                  </li>
+                  <li class="Gallery">
+                      
+                  </li>
+                  <li class="Gallery">
+                      <a href="#" >Artists</a>
+                      <ul class="sub-menu">
+                          <li><a href="/featuredArtists">Featured Artists</a></li>
+                          <li><a href="/featuredArtists">Trending Artists</a></li>
+                      </ul>
+                  </li>
+                  <li><a href="../pages/learn.html">Learning</a></li>
+                  <li><a href="../pages/allArtists.html">Contact Artists</a></li>
+                  <div></div><div></div>
+                  <li class="account">
+                      <a href="#">Account</a>
+                      <ul class="sub-menu">
+                        <li><a href="../pages/account.html">My Account</a></li>
+                        <li><a href="#">Order History</a></li>
+                        <li><a href="#">Logout</a></li>
+                      </ul>
+                    </li>
+                    <li class="wishlist">
+                      <a href="/addPainting">Add Painting</a>
+                    </li>
+                    <li class="wishlist">
+                      <a href="/addPainter">Add Painter</a>
+                    </li>
+                  </li>
+                    <li class="wishlist">
+                      <a href="#">Wishlist</a>
+                    </li>
+                    <li class="cart">
+                      <a href="#"><i class="fas fa-shopping-cart icon" ></i></a>
+                    </li>
+              </ul>
+          </div>
+          
+        </nav>
+      </header>
+
+    <main>
+            <h4 class="hello"> </h4>
+            <section>
+                <h4 style="font-size:22px;">Your Courses</h4>
+                <div class="card-container">
+                    <div class="card">
+                      <a href="https://www.youtube.com/watch?v=tDdfPMTX15Y">
+                        <img src="../banners/watercolor-course-new.jpg" alt="Card Image 1">
+                        <h4>The Watercolor Workshop</h4>
+                        <h6>• 3 Hours  • 19 Lessons  • 17 E-Books</h6>
+                    </div>
+                    <div class="card">
+                      <a href="https://www.youtube.com/watch?v=bYaMtELAloM&list=PLXUkNk1HRolHw3ED-2PdIbzXXb44bzI7">
+                        <img src="../banners/acrylic-painting-course.jpg" alt="Card Image 2">
+                        <h4>The Acrylic Painting Academy</h4>
+                        <h6>• 3 Hours  • 19 Lessons  • 17 E-Books</h6>
+                    </div>
+                    
+                </div>
+            </section>
+        <section id="portfolio">
+            <h5 style="font-size:22px;">Your Portfolio</h5>
+            <ul>
+              
+                <li style="display:none">
+                    <a href="#">
+                        <img src="../paintings/nehamam.jpeg" alt="Painting 2">
+                        <h4 >Prof. Neha Mam</h4>
+                    </a>
+                </li>
+                <li>
+                  <a href="#">
+                      <img src="../paintings/anupama.jpeg" alt="Painting 1">
+                      <h4>Anupama Pencil Art (Actress)</h4>
+                  </a>
+              </li>
+              <li>
+                <a href="#">
+                    <img src="../paintings/nehamam.jpeg" alt="Painting 2">
+                    <h4 >Prof. Neha Mam</h4>
+                </a>
+            </li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Get in Touch</h2>
+            <p>
+              Have questions or want to learn more about our paintings.
+            </p>
+            <ul>
+              <li><a href="mailto:cs23b1080@iiitr.ac.in">Email us</a></li>
+              <li><a href="tel:123-456-7890">Call us</a></li>
+              <li><a href="#">Follow us on social media</a></li>
+            </ul>
+          </section>
+    </main>
+</body>
+<script>
+    const heading = document.getElementsByTagName("h4")[0];
+
+    fetch("/profile").then(async (response) => await response.json())
+      .then(async (profile) => {
+          console.log(profile.user.email + "  Change kar de");
+          heading.innerHTML = "Hello, " + profile.user.name;
+      });
+
+</script>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Card Layout Example</title>
+    <link rel="stylesheet" href="../css/styles11.css" />
+</head>
+<body>
+
+    <header>
+        <nav>
+          <div class="logo">
+              <a href="#">Pavi Painting Website</a>
+            </div>
+  
+          <div class="search-bar">
+              <input type="text" placeholder="Search for paintings..." />
+              <button>Search</button>
+          </div>
+  
+          <div>
+              <ul>
+                  <li><a href="/home">Home</a></li>
+                  <li class="Gallery">
+                      <a href="#" >Paintings</a>
+                      <ul class="sub-menu">
+                          <li><a href="../featuredPaintings">Portraits</a></li>
+                          <li><a href="../landscapePaintings">Sceneries</a></li>
+                        <li><a  href="../undergroundPaintings">Under Ground Paintings</a></li>
+                        <li><a href="/allPaintings">All Paintings</a></li>
+                      </ul>
+                  </li>
+                  <li class="Gallery">
+                      
+                  </li>
+                  <li class="Gallery">
+                      <a href="#" >Artists</a>
+                      <ul class="sub-menu">
+                          <li><a href="/featuredArtists">Featured Artists</a></li>
+                          <li><a href="/trendingArtists">Trending Artists</a></li>
+                      </ul>
+                  </li>
+                  <li><a href="../pages/learn.html">Learning</a></li>
+                  <li><a href="../pages/allArtists.html">Contact Artists</a></li>
+                  <div></div><div></div>
+                  <li class="account">
+                      <a href="#">Account</a>
+                      <ul class="sub-menu">
+                        <li><a href="../pages/account.html">My Account</a></li>
+                        <li><a href="#">Order History</a></li>
+                        <li><a href="#">Logout</a></li>
+                      </ul>
+                    </li>
+                    <li class="wishlist">
+                      <a href="/addPainting">Add Painting</a>
+                    </li>
+                    <li class="wishlist">
+                      <a href="/addPainter">Add Painter</a>
+                    </li>
+                  </li>
+                    <li class="wishlist">
+                      <a href="#">Wishlist</a>
+                    </li>
+                    <li class="cart">
+                      <a href="#"><i class="fas fa-shopping-cart icon" ></i></a>
+                    </li>
+              </ul>
+          </div>
+          
+        </nav>
+      </header>
+
+      <main>
+
+       
+
+        <h2><b><big>Featured Landscapes</big></b></h2>
+        <div class="container">
+
+            <% landscapes.forEach(image => { %>
+                <div class="card">
+                    <img src="data:<%=image.contentType%>;base64,<%=image.imageBase64%>" alt="Card Image">
+                    <div class="card-content">
+                        <h2 class="card-title"> <%= image.title %> </h2>
+                        <div class="card-buttons">
+                            <form action="/allPaintings/details" method="POST" id="form">
+
+                                <div class="mb-3" style="display: none;"> 
+                                    <label for="imageId" class="form-label"></label> 
+                                    <input type="text" class="form-control" name="_id" id="imageId" value="<%= image._id %>"> 
+                                </div>
+                    
+                                <div class="text-center"> <button type="submit" class="button">Details</button> </div>
+                            </form>
+                            <button class="button buy">Buy</button>
+                        </div>
+                    </div>
+                </div>
+            <% }); %>
+
+        </div>
+
+        
+
+        <section id="contact">
+            <h2>Get in Touch</h2>
+            <p>
+              Have questions or want to learn more about our paintings.
+            </p>
+            <ul>
+              <li><a href="mailto:cs23b1080@iiitr.ac.in">Email us</a></li>
+              <li><a href="tel:123-456-7890">Call us</a></li>
+              <li><a href="#">Follow us on social media</a></li>
+            </ul>
+          </section>
+
+      </main>
+</body>
+
+<script>
+    const detailsLinks = document.querySelectorAll('.details-link');
+
+    detailsLinks.forEach(link => {
+    link.addEventListener('click', event => {
+        event.preventDefault();
+        const imageId = event.target.dataset.id;
+        imageToDisplay = {
+                "_id": imageId,
+        };
+        const bodyString = JSON.stringify(imageToDisplay);
+        fetch("/displayDetails", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: bodyString
+        });
+        
+      });
+    });
+    
+
+</script>
+
+</html>

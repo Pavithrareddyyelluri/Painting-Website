@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+    <style>
+      
+      /* Add your CSS styles here */
+      body {
+        background-image: url("https://img.freepik.com/free-vector/artist-tools-realistic-background-composition-with-empty-space-surrounded-by-images-brushes-pencils-palette-vector-illustration_1284-78961.jpg?w=1060&t=st=1713263556~exp=1713264156~hmac=79a7245beac5424ed991aa191a0072c27fac35bedd03c65d3a0d4ee800e1a601");
+        background-size: cover;
+        background-position: center;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f5f5f5;
+      }
+
+      form {
+        background-color: #fff;
+        padding: 2rem;
+        border-radius: 0.25rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        margin-top: 0;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="password"] {
+        width: 100%;
+        padding: 0.5rem;
+        border-radius: 0.25rem;
+        border: 1px solid #ccc;
+      }
+
+      button[type="submit"] {
+        background-color: #007bff;
+        color: #fff;
+        padding: 0.5rem;
+        border: none;
+        border-radius: 0.25rem;
+        cursor: pointer;
+        margin-top: 1rem;
+      }
+
+      button[type="submit"]:hover {
+        background-color: #0069d9;
+      }
+    </style>
+  </head>
+  <body>
+        <div style="text-align: center;">
+            <h3>Proceed Login</h3>
+            <form action="/login" method="POST">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required />
+                <br />
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required />
+                <br />
+                <button type="submit">Login</button>
+              </form>
+              <br><br><br>
+              Don't have an account? <button>
+                <a href="/register">Register here</a>
+              </button>
+        </div>
+  </body>
+</html>

@@ -1,0 +1,169 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painter Upload Form</title>
+    <link rel="stylesheet" href="../css/styles11.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("https://img.freepik.com/free-vector/artist-tools-realistic-background-composition-with-empty-space-surrounded-by-images-brushes-pencils-palette-vector-illustration_1284-78961.jpg?w=1060&t=st=1713263556~exp=1713264156~hmac=79a7245beac5424ed991aa191a0072c27fac35bedd03c65d3a0d4ee800e1a601");
+        background-size: cover;
+        background-position: center;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+
+        .mb-3 {
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            background-color: #FFC107;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #FFB300;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <nav>
+          <div class="logo">
+              <a href="#">Pavi Painting Website</a>
+            </div>
+  
+          <div class="search-bar">
+              <input type="text" placeholder="Search for paintings..." />
+              <button>Search</button>
+          </div>
+  
+          <div>
+              <ul>
+                  <li><a href="/home">Home</a></li>
+                  <li class="Gallery">
+                      <a href="#" >Paintings</a>
+                      <ul class="sub-menu">
+                          <li><a href="featuredPaintings">Portraits</a></li>
+                          <li><a href="landscapePaintings">Sceneries</a></li>
+                        <li><a  href="undergroundPaintings">Under Ground Paintings</a></li>
+                        <li><a href="/allPaintings">All Paintings</a></li>
+                      </ul>
+                  </li>
+                  <li class="Gallery">
+
+                  </li>               
+                  <li class="Gallery">
+                      <a href="#" >Artists</a>
+                      <ul class="sub-menu">
+                          <li><a href="/featuredArtists">Featured Artists</a></li>
+                          <li><a href="/trendingArtists">Trending Artists</a></li>
+                      </ul>
+                  </li>
+                  <li><a href="../pages/learn.html">Learning</a></li>
+                  <li><a href="../pages/allArtists.html">Contact Artists</a></li>
+                  <div></div><div></div>
+                  <li class="account">
+                      <a href="#">Account</a>
+                      <ul class="sub-menu">
+                        <li><a href="../pages/account.html">My Account</a></li>
+                        <li><a href="#">Order History</a></li>
+                        <li><a href="#">Logout</a></li>
+                      </ul>
+                      <li class="wishlist">
+                        <a href="/addPainting">Add Painting</a>
+                      </li>
+                      <li class="wishlist">
+                        <a href="/addPainter">Add Painter</a>
+                      </li>
+                    </li>
+                    <li class="wishlist">
+                      <a href="#">Wishlist</a>
+                    </li>
+                    <li class="cart">
+                      <a href="#"><i class="fas fa-shopping-cart icon" ></i></a>
+                    </li>
+              </ul>
+          </div>
+          
+        </nav>
+      </header>
+
+      <main>
+        <div class="container">
+            <h1 class="text-center mb-4">Artist Upload Form</h1>
+            <form action="/uploadPainter" method="POST" enctype="multipart/form-data" id="form">
+    
+                <div class="mb-3"> 
+                    <label for="formFile" class="form-label">Upload Artist Image</label> 
+                    <input type="file" class="form-control" name="image" id="formFile" required> 
+                </div>
+                
+                <div class="mb-3"> 
+                    <label for="title" class="form-label">Artist Name</label> 
+                    <input type="text" class="form-control" name="name" placeholder="" required> 
+                </div>
+    
+                <div class="mb-3"> 
+                    <label for="descriptions" class="form-label">Biography</label> 
+                    <textarea class="form-control" name="biography" placeholder="About the Artist..."rows="4"></textarea> 
+                </div>
+    
+                <div class="mb-3">
+                    <label for="arrival">Born Date</label>
+                    <input id="arrival" type="date" name="born" required />
+                    <span class="validity"></span>
+                </div>
+    
+                <div class="mb-3">
+                    <label for="arrival">Death Date (Not Required)</label>
+                    <input id="arrival" type="date" name="death" />
+                    <span class="validity"></span>
+                </div>
+    
+                <div class="mb-3"> 
+                    <label for="art">Artist Type</label>
+                    <select name="artistType" id="art" >
+                        <option value="featured">Featured</option>
+                        <option value="trending">Trending</option>
+                    </select>
+                </div>
+    
+                <div class="text-center"> <button type="submit" class="btn">Upload</button> </div>
+    
+            </form>
+        </div>
+
+        <section id="contact">
+            <h2>Get in Touch</h2>
+            <p>
+              Have questions or want to learn more about our paintings.
+            </p>
+            <ul>
+              <li><a href="mailto:cs23b1080@iiitr.ac.in">Email us</a></li>
+              <li><a href="tel:123-456-7890">Call us</a></li>
+              <li><a href="#">Follow us on social media</a></li>
+            </ul>
+          </section>
+
+      </main>
+</body>
+
+</html>

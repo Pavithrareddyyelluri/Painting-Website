@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>Pavi Painting Website</title>
+  </head>
+  <body>
+    
+    <header>
+      <nav>
+        <div class="logo">
+            <a href="#">Pavi Painting Website</a>
+          </div>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Search for paintings..." />
+            <button>Search</button>
+        </div>
+
+        <div>
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <li class="Gallery">
+                    <a href="#" >Paintings</a>
+                    <ul class="sub-menu">
+                        <li><a href="./featuredPaintings" >Portraits</a></li>
+                        <li><a href="./landscapePaintings" >Sceneries</a></li>
+                      <li><a  href="./undergroundPaintings" >Under Ground Paintings</a></li>
+                      <li><a href="/allPaintings" >All Paintings</a></li>
+                    </ul>
+                </li>
+                <li class="Gallery">
+                    <!--<a href="#" >Art Categories</a>
+                    <ul class="sub-menu">
+                      <li><a href="#">Pencil Art</a></li>
+                      <li><a href="#">Pestel Art</a></li>
+                    <li><a  href="#">Water Coloring</a></li>
+                  </ul> -->
+                </li>
+                <li class="Gallery">
+                    <a href="#" >Artists</a>
+                    <ul class="sub-menu">
+                        <li><a href="/featuredArtists">Featured Artists</a></li>
+                        <li><a href="/trendingArtists">Trending Artists</a></li>
+                    </ul>
+                </li>
+                <li><a href="./pages/learn.html">Learning</a></li>
+                <li><a href="./pages/allArtists.html">Contact Artists</a></li>
+                <div></div><div></div>
+                <li class="account">
+                    <a href="#">Account</a>
+                    <ul class="sub-menu">
+                      <li><a href="/myaccount">My Account</a></li>
+                      <li><a href="#">Order History</a></li>
+                      <li><a href="#">Logout</a></li>
+                    </ul>
+                  </li>
+                  <li class="wishlist">
+                    <a href="/addPainting">Add Painting</a>
+                  </li>
+                  <li class="wishlist">
+                    <a href="/addPainter">Add Painter</a>
+                  </li>
+                  <li class="cart">
+                    <a href="#"><i class="fas fa-shopping-cart icon" ></i></a>
+                  </li>
+            </ul>
+        </div>
+        
+      </nav>
+    </header>
+
+    <main>
+
+      <section id="home" >
+        <h1 ><marquee width="50%">Welcome to our Paintings Selling Website! </marquee></h1>
+        <p >
+          Discover unique and beautiful paintings from talented artists.
+        </p>
+      </section>
+
+      <section id="banner">
+        <div class="image-container">
+            <img src="./banners/banner.avif" alt="Image">
+          </div>
+    </section>
+
+      <section id="paintings">
+        <h2>Our Paintings</h2>
+        <ul>
+          <li><a href="/undergroundPaintings">Abstract</a></li>
+          <li><a href="/landscapePaintings">Landscape</a></li>
+          <li><a href="/featuredPaintings">Portrait</a></li>
+          <li><a href="#">Still Life</a></li>
+          <a href="/allPaintings" class="explore-btn">Explore All Paintings</a>
+        </ul>
+      </section>
+      <section id="learning">
+        <h2>Learning Center</h2>
+        <ul>
+          <li><a href="./pages/learn.html">Painting Techniques</a></li>
+          <li><a href="./pages/account.html">Art History</a></li>
+          <li><a href="./pages/allArtists.html">Meet the Artists</a></li>
+        </ul>
+      </section>
+      <section id="about">
+        <h2>Featured Paintings</h2>
+        <div class="image-gallery">
+
+          <% featuredPaintings.forEach(image => { %>
+            <div class="countImage">
+              <img src="data:<%=image.contentType%>;base64,<%=image.imageBase64%>" alt="Painting" />
+              <div class="buttons">
+                <a href="#" style="background-color:blue;">Details</a>
+                <a href="./pages/allArtists.html">Buy</a>
+              </div>
+            </div>
+          <% }); %>
+          
+        </div>
+      </section>
+      <section id="contact">
+        <h2>Get in Touch</h2>
+        <p>
+          Have questions or want to learn more about our paintings.
+        </p>
+        <ul>
+          <li><a href="mailto:cs23b1080@iiitr.ac.in">Email us</a></li>
+          <li><a href="tel:123-456-7890">Call us</a></li>
+          <li><a href="#">Follow us on social media</a></li>
+        </ul>
+      </section>
+    </main>
+  </body>
+
+</html>
